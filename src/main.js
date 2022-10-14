@@ -36,6 +36,9 @@ library.add(
 
 // Vue.component('font-awesome-icon', FontAwesomeIcon) // <<<--- ..?
 
+// CSS Custom
+import './assets/initial.css'
+
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
