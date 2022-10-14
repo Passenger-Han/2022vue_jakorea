@@ -1,5 +1,9 @@
-# ja-korea
+# ja-korea   
+## Purpose
+```
+This page is built for educational purpose-only.   
 
+```
 ## Project setup
 ```
 npm install
