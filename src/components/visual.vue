@@ -38,7 +38,7 @@ export default {
 
     props: [
         'visuals',
-    ]
+    ],
 }
 </script>
 
@@ -48,6 +48,7 @@ export default {
         background-size: cover;
         background-position: center;
         height: auto;
+        padding: 16px;
 
         .videos {
             margin-left: auto;

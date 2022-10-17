@@ -1,7 +1,7 @@
 export default [
     {
   title:"JA Korea 20th anniversary",
-	subtitle:"제이에이코리아 설립20주면",
+	subtitle:"제이에이코리아 설립20주년",
 	src: "main-quick-1.svg",
 	href: "javascript:void(0)"
     },
