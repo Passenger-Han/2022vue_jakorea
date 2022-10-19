@@ -10,13 +10,15 @@
             v-for="(element, index) in visuals" :key="index"
         >
 
-            <div class="texts">
-                <h2 v-html="element.mainTitle"></h2>
-                <p v-html="element.subtitle"></p>
-                <a :href="element.href">자세히 보기 →</a>
-            </div>
-            <div class="videos">
-                <video :src="`images/01mainSlide_video/${element.mVideo}`"></video>
+            <div class="container">
+                <div class="texts">
+                    <h2 v-html="element.mainTitle"></h2>
+                    <p v-html="element.subtitle"></p>
+                    <a :href="element.href">자세히 보기 →</a>
+                </div>
+                <div class="videos">
+                    <video :src="`images/01mainSlide_video/${element.mVideo}`"></video>
+                </div>
             </div>
 
 
@@ -81,6 +83,7 @@ export default {
                 font-family: 'NanumSquareNeoExtraBold';
             }
         }
+        
 
     }
 
@@ -88,17 +91,25 @@ export default {
         .visuals .swiper-slide {
             height: 92vh;
 
+            .container {
+                height: 100%;
+                position: relative;
+            }
+
             .videos {
                 height: 100%;
                 display: flex;
                 align-items: center;
+                transform: translateX(200px);
             }
         
             .texts {
                 position: absolute;
+                z-index: 2;
 
-                top: 40%; transform: translateY(-50%);
-                left: 12%;
+                top: 50%; 
+                transform: translateY(-50%);
+                // left: calc( 50% - 616px );
             }
         }
 

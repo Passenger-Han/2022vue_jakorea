@@ -5,7 +5,7 @@
         <swiper
             :effect="'fade'"
             :fadeEffect="{crossFade: true,}"
-            :modules="modules"
+            :modules="modulesEdu"
         >
             <template v-for="(element, index) in educationprograms" :key="index">
                 <swiper-slide>
@@ -42,8 +42,7 @@ export default {
 
     setup(){
         return {
-
-            modules: [EffectFade,],
+            modulesEdu: [EffectFade,],
             // modules: [EffectFade, Pagination,],
         };
     },
