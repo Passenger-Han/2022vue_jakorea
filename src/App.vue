@@ -5,6 +5,7 @@
   <Educationprogram :educationprograms="educationprograms"></Educationprogram>
   <Graph :miscellaneous="miscellaneous"></Graph>
   <New v-bind="noticesBundle"></New>
+  <Recruit v-bind="recruitsBundle"></Recruit>
 </template>
 
 <script>
@@ -18,6 +19,9 @@ import noticeData from './data/04notice.js';
 import storyData from './data/05story.js';
 import newsData from './data/06news.js';
 
+import recruitData from './data/07recruit.js';
+import resultData from './data/08result.js';
+
 import miscellaneousData from './data/99miscellaneous.js';
 
 // components
@@ -27,6 +31,7 @@ import Vision from './components/vision.vue';
 import Educationprogram from './components/educationprogram.vue';
 import Graph from './components/graph.vue';
 import New from './components/news.vue';
+import Recruit from './components/recruit.vue';
 
 export default {
   components: {
@@ -36,6 +41,7 @@ export default {
     Educationprogram,
     Graph,
     New,
+    Recruit
   },
 
   data(){
@@ -52,6 +58,11 @@ export default {
         notices: noticeData,
         stories: storyData,
         news: newsData,
+      },
+
+      recruitsBundle: {
+        recruits: recruitData,
+        results: resultData,
       },
 
       miscellaneous: miscellaneousData,
