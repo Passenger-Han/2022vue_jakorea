@@ -7,6 +7,8 @@
   <New v-bind="noticesBundle"></New>
   <Recruit v-bind="recruitsBundle"></Recruit>
   <Support :supports="supports"></Support>
+  <Newsletter></Newsletter>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -36,6 +38,8 @@ import Graph from './components/graph.vue';
 import New from './components/news.vue';
 import Recruit from './components/recruit.vue';
 import Support from './components/support.vue';
+import Newsletter from './components/newsletter.vue';
+import Footer from './components/footer.vue';
 
 export default {
   components: {
@@ -47,6 +51,8 @@ export default {
     New,
     Recruit,
     Support,
+    Newsletter,
+    Footer,
   },
 
   data(){

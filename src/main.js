@@ -13,6 +13,7 @@ import {
     faMagnifyingGlass,
     faCircleUser,
     faBars,
+    faAt,
 } from '@fortawesome/free-solid-svg-icons' // <<<--- add more FREE + SOLID icons here
 import { 
     faFacebook,
@@ -29,6 +30,7 @@ library.add(
     faMagnifyingGlass,
     faCircleUser,
     faBars,
+    faAt,
     faFacebook,
     faInstagram,
     faYoutube,

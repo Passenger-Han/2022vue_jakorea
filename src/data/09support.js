@@ -179,5 +179,13 @@ export default [
     title: "HUG",
     src: "icon45.svg",
   },
+  {
+    title: "LIKE",
+    src: "icon45.svg",
+  },
+  {
+    title: "LIKE2",
+    src: "icon45.svg",
+  },
 
 ]

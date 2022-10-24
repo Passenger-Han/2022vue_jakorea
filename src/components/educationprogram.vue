@@ -27,7 +27,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import "swiper/css/effect-fade";
 // import "swiper/css/pagination";
-
 import { EffectFade, Pagination } from 'swiper';
 
 export default {
