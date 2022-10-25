@@ -4,7 +4,7 @@
         :slides-per-view="3"
     >
         <template v-slot:container-start>
-            <div class="wrapper d-flex mb-5">
+            <div class="wrapper d-flex flex-column flex-md-row mb-5">
                 <h2>JA 기관소식</h2>
                 <ul class="menu d-flex align-items-end">
                     <li @click="categoryIndex = 0">공지사항<span :class="[categoryIndex == 0? 'active' : '']"></span></li>
@@ -94,7 +94,6 @@ ul, ol, li {list-style: none;}
 .swiper {
     .swiper-slide {
         height: 300px;
-        background: beige;
 
         .titles {
             h4 {

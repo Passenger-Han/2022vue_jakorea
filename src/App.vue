@@ -6,6 +6,7 @@
   <Graph :miscellaneous="miscellaneous"></Graph>
   <New v-bind="noticesBundle"></New>
   <Recruit v-bind="recruitsBundle"></Recruit>
+  <Advertisement></Advertisement>
   <Support :supports="supports"></Support>
   <Newsletter></Newsletter>
   <Footer></Footer>
@@ -37,6 +38,7 @@ import Educationprogram from './components/educationprogram.vue';
 import Graph from './components/graph.vue';
 import New from './components/news.vue';
 import Recruit from './components/recruit.vue';
+import Advertisement from './components/advertisement.vue';
 import Support from './components/support.vue';
 import Newsletter from './components/newsletter.vue';
 import Footer from './components/footer.vue';
@@ -50,6 +52,7 @@ export default {
     Graph,
     New,
     Recruit,
+    Advertisement,
     Support,
     Newsletter,
     Footer,
@@ -85,6 +88,8 @@ export default {
 </script>
 
 <style lang="scss">
+  ul, ol, li {list-style: none;}
+
   body {
     // font-family: 'NanumSquareNeoLight';
     font-family: 'NanumSquareNeo';

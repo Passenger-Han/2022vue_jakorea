@@ -1,8 +1,11 @@
 <template>
 <div class="container mx-auto py-5">
     <div class="row">
-        <div class="col recruit">
-            <h4>모집공고</h4>
+        <div class="col-12 col-md-6 recruit">
+            <div class="category d-flex justify-content-between align-items-center">
+                <h4>모집공고</h4>
+                <a href="#!">+</a>
+            </div>
             <ul>
                 <li v-for="index in 4" :key="index" class="p-3">
                     <p class="title">{{ recruits[index - 1].title }}</p>
@@ -10,8 +13,11 @@
                 </li>
             </ul>
         </div>
-        <div class="col announce">
-            <h4>결과발표</h4>
+        <div class="col-12 col-md-6 announce">
+            <div class="category d-flex justify-content-between align-items-center">
+                <h4>결과발표</h4>
+                <a href="#!">+</a>
+            </div>
             <ul>
                 <li v-for="index in 4" :key="index" class="p-3">
                     <p class="title">{{ results[index - 1].title }}</p>
@@ -45,7 +51,7 @@ h4 {
     border-bottom: 2px solid #000;
 }
 
-.container {height: 720px;}
+.container {min-height: 640px;}
 
 .row {
     height: 100%;
@@ -56,6 +62,13 @@ h4 {
 
     display: flex;
     flex-direction: column;
+}
+
+.category {
+    a {
+        font-size: 2rem;
+        opacity: 0.5;
+    }
 }
 
 ul {

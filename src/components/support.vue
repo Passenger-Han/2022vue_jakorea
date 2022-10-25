@@ -1,12 +1,12 @@
 <template>
 <div class="container py-5">
     <div class="row flex-column flex-md-row">
-        <div class="col col-md-4">
-            <div class="text">
+        <div class="col col-md-4 text mb-5">
+            <div>
                 <h5>국내외 여러기업이 동참하고 있습니다.</h5>
-                <h3>JA Korea 후원</h3>
+                <h3 class="mb-3">JA Korea 후원</h3>
             </div>
-            <a href="">자세히 보기 →</a>
+            <a href="#!">자세히 보기 →</a>
         </div>
         <div class="col col-md-8">
             <swiper
@@ -67,7 +67,7 @@ export default {
                         tempArray.push(this.supports[(9 * i) + j]);
                     } else {
                         this.iconArray.push(tempArray);
-                        break;
+                        break; // 마지막 묶음(array)이 9개로 떨어지지 않을 경우를 상정하고 쓰는 코드 뭉치
                     };
                     if (j == 8){
                         this.iconArray.push(tempArray);
@@ -85,12 +85,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// :root {
-//     $enable-grid-classes: false;
-//     $enable-cssgrid: true;
-// }
-
 .row {margin-top: 0; margin-left: 0; margin-right: 0;} // 어째서인지는 모르겠으나, margin 이 swiper 의 fade-opacity 에 영향을 주고 있다..
+
+.text {
+    h5 {font-size: 1rem; font-weight: 600;}
+    h3 {font-family: 'NanumSquareNeoHeavy'; font-size: 2.5rem;}
+    a {
+        display: inline-block;
+        padding: 16px 24px;
+        background: #FFF;
+        box-shadow: 0 0 16px #00000023;
+        border-radius: 32px;
+    }
+}
 
 .swiper {
     .swiper-slide {
