@@ -1,10 +1,29 @@
 <template>
     <swiper
+        :effect="'fade'"
+        :fadeEffect="{crossFade: true,}"
         :slides-per-view="1"
         :loop="true"
         :autoplay="true"
+        :navigation="{
+            'nextEl': '.swiper-button-next.vis',
+            'prevEl': '.swiper-button-prev.vis',
+        }"
+        :pagination="{
+            el: '.swiper-pagination',
+            type: 'bullets',
+        }"
         class="visuals"
+        :modules="modulesVisual"
     >
+
+        <template v-slot:container-end>
+            <div class="container pagination-wrapper d-flex align-items-baseline">
+                <div class="swiper-button-prev vis"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next vis"></div>
+            </div>
+        </template>
 
         <swiper-slide
             v-for="(element, index) in visuals" :key="index"
@@ -29,8 +48,12 @@
 
 <script>
 // swiper
+import { Navigation, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import "swiper/css/effect-fade";
 
 export default {
     components: {
@@ -41,10 +64,32 @@ export default {
     props: [
         'visuals',
     ],
+
+    setup(){
+        return {
+            modulesVisual: [ Navigation, Pagination, EffectFade, ],
+        };
+    },
 }
 </script>
 
 <style lang="scss">
+    .visuals {
+        --swiper-navigation-size: 20px;
+        --swiper-pagination-bullet-size: 16px;
+
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination {position: initial;}
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet {filter: grayscale(1);}
+        .swiper-pagination {width: initial;}
+
+
+        .pagination-wrapper {
+            gap: 8px;
+            position: relative;
+            bottom: 180px;
+        }
+    }
+
     .visuals .swiper-slide{
         background-color: rgb(225, 239, 242);
         background-size: cover;

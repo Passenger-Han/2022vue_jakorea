@@ -52,6 +52,8 @@ export default {
             }
 
             .checkbox {
+                user-select: none;
+
                 img {
                     width: 28%;
                     transform: translateY(20px);

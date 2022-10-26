@@ -70,6 +70,11 @@ export default {
                 padding: 1.25rem 2.5rem;
                 border: 1px solid #FFFFFF;
                 border-radius: 2rem;
+
+                &:hover {
+                    background-color: #FFFFFF;
+                    color: #000000;
+                }
             }
         }
     }

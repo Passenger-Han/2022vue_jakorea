@@ -2,10 +2,10 @@
 <div class="background graph">
     <div class="container">
         <div class="row">
-            <div class="col col-md-4 d-none d-md-flex image">
+            <div class="col col-lg-4 d-none d-lg-flex image">
                 <img src="images/99miscellaneous/graph-thumb.jpg" alt="">
             </div>
-            <ul class="col col-md-8 row text flex-md-column justify-content-md-center">
+            <ul class="col col-lg-8 row text flex-md-column justify-content-md-center">
                 <li v-for="(element, index) in miscellaneous.graph" :key="index" class="col-6 col-md-12 flex-column flex-md-row">
                     <div class="bars order-2 order-md-1">
                         <div class="bar d-none d-md-block"></div>
@@ -59,7 +59,7 @@ export default {
     .text {
         list-style: none;
         padding: 0;
-        gap: 1rem 0;
+        gap: 1.25rem 0;
         li {
             display: flex;
             align-items: center;
@@ -68,6 +68,7 @@ export default {
             .bars {
                 flex-basis: 80%;
                 display: flex;
+                gap: 8px;
                 flex-direction: column;
                 justify-content: center;
                 .bar {

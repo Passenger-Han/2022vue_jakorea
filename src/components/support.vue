@@ -1,6 +1,8 @@
 <template>
 <div class="container py-5">
     <div class="row flex-column flex-md-row">
+        
+
         <div class="col col-md-4 text mb-5">
             <div>
                 <h5>국내외 여러기업이 동참하고 있습니다.</h5>
@@ -12,6 +14,10 @@
             <swiper
                 :effect="'fade'"
                 :fadeEffect="{crossFade: true,}"
+                :navigation="{
+                    'prevEl': '.swiper-button-prev.sup',
+                    'nextEl': '.swiper-button-next.sup',
+                }"
                 :modules="modulesSup"
             >
                 <swiper-slide v-for="(element, index) in iconArray" :key="index">
@@ -26,14 +32,20 @@
             </swiper>
         </div>
     </div>
+    
+    <div class="navigation-wrapper d-none d-md-flex">
+        <div class="swiper-button-prev sup"></div>
+        <div class="swiper-button-next sup"></div>
+    </div>
 </div>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import { EffectFade } from 'swiper';
+import { Navigation, EffectFade } from 'swiper';
 
 export default {
     components: {
@@ -53,7 +65,7 @@ export default {
 
     setup(){
         return {
-            modulesSup: [EffectFade, ],
+            modulesSup: [ Navigation, EffectFade, ],
         };
     },
 
@@ -130,5 +142,26 @@ export default {
             }
         }
     }
+}
+
+.navigation-wrapper {
+    --swiper-navigation-size: 20px;
+
+    position: relative;
+    display: flex;
+    gap: 3rem;
+    bottom: 18px;
+
+    .swiper-button-prev, .swiper-button-next {
+        position: initial;
+        left: initial;
+        right: initial;
+
+        filter: grayscale(1);
+        transition: 1.5s;
+    }
+
+    .swiper-button-prev:hover {transform: translateX(25%);}
+    .swiper-button-next:hover {transform: translateX(-25%);}
 }
 </style>

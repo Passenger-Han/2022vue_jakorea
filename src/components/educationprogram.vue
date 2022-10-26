@@ -5,6 +5,7 @@
             :effect="'fade'"
             :fadeEffect="{crossFade: true,}"
             :modules="modulesEdu"
+            navigation
             @swiper="onSwiper"
         >
             <template v-for="(element, index) in educationprograms" :key="index">
@@ -39,11 +40,11 @@
 </template>
 
 <script>
+import { EffectFade, Navigation } from 'swiper';
 import { Swiper, SwiperSlide, } from 'swiper/vue';
 import 'swiper/css';
 import "swiper/css/effect-fade";
-// import "swiper/css/pagination";
-import { EffectFade, Pagination } from 'swiper';
+import "swiper/css/navigation";
 
 export default {
     components: {
@@ -63,8 +64,8 @@ export default {
 
     setup(){
         return {
-            modulesEdu: [EffectFade,],
-            // modules: [EffectFade, Pagination,],
+            // modulesEdu: [EffectFade,],
+            modulesEdu: [EffectFade, Navigation,],
         };
     },
 
@@ -107,6 +108,8 @@ export default {
                         font-weight: bold;
                         color: #00000099;
                         padding: 0.25rem 0.875rem;
+                        cursor: pointer;
+                        user-select: none;
 
                         &:hover {
                             color: #FFFFFF;
@@ -141,6 +144,22 @@ export default {
                         box-shadow: 0 0 16px #00000023;
                         border-radius: 32px;
                     }
+                }
+            }
+
+            .swiper-button-prev, .swiper-button-next {
+                filter: grayscale(1);
+                transition: 1.5s;
+            }
+
+            .swiper-button-prev {
+                &:hover {
+                    transform: translateX(25%);
+                }
+            }
+            .swiper-button-next {
+                &:hover {
+                    transform: translateX(-25%);
                 }
             }
         }
